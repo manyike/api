@@ -9,7 +9,6 @@ var apiData = require('../model/getdata');
 router.get('*/todo/*', function(req, res, next) {
     var apiDataObj = new apiData();
     apiDataObj.getTodos(function(response){
-
         res.render('todo', { title: 'Junk Data',todo: response });
     });
 });
