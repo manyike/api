@@ -2,16 +2,19 @@
 {<content}
     {?status}
         <p>Enjoy reading developers tasks that are  {?status}completed{:else} In progress{/status}</p>
+        <strong>Total number of results {total}</strong>
     {:else}
         <p>Enjoy reading developers tasks</p>
         <form method="GET" action="/todo/filter">
-            <label for="userid">Filter tasks by status</label>&nbsp;&nbsp;
-            <select name="status" required>
+            <label for="status">Filter tasks by status</label>&nbsp;&nbsp;
+            <select name="status" id="status" required>
+                <option value="">Select status</option>
                 <option value="1">Completed</option>
                 <option value="0">In progress</option>
             </select>
             <input type="submit" value="filter">
-        </form>
+        </form><br />
+        <strong>{completed} Tasks are completed and {inProgress} Tasks are still in progress</strong>
     {/status}
     <div>
         <ul>

@@ -9,7 +9,16 @@ var apiData = require('../model/getdata');
 router.get('*/todo/*', function(req, res, next) {
     var apiDataObj = new apiData();
     apiDataObj.getTodos(function(response){
-        res.render('todo', { title: 'Junk Data',todo: response });
+        var completed = 0,
+            inProgress = 0;
+        response.forEach(function(el, idx, array){
+            if(el.completed){
+                ++completed;
+            } else {
+                ++inProgress;
+            }
+        });
+        res.render('todo', { title: 'Junk Data',todo: response, completed: completed, inProgress: inProgress });
     });
 });
 
