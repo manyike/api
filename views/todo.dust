@@ -1,0 +1,27 @@
+{>"layout"/}
+{<content}
+    {?status}
+        <p>Enjoy reading developers tasks that are  {?status}completed{:else} In progress{/status}</p>
+    {:else}
+        <p>Enjoy reading developers tasks</p>
+        <form method="GET" action="/todo/filter">
+            <label for="userid">Filter tasks by status</label>&nbsp;&nbsp;
+            <select name="status" required>
+                <option value="1">Completed</option>
+                <option value="0">In progress</option>
+            </select>
+            <input type="submit" value="filter">
+        </form>
+    {/status}
+    <div>
+        <ul>
+            {#todo}
+                <li>
+                    <p>User Id: {userId}</p>
+                    <p>Task title: {title}</p>
+                    <p>Task status: {?completed} completed{:else} in progress{/completed}</p>
+                </li>
+            {/todo}
+        </ul>
+    </div>
+{/content}

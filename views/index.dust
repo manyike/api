@@ -1,0 +1,9 @@
+{>"layout"/}
+{<content}
+<div>
+    <ul>
+        <li><a href="/posts/">Posts</a></li>
+        <li><a href="/todo/">To do list</a></li>
+    </ul>
+</div>
+{/content}

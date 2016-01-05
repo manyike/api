@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <style>
+        body {
+            background-color: ivory;
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        li {
+            list-style-type: none;
+        }
+        a {
+            color: cornflowerblue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        li {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello welcome to {title}</h1>
+<h2>Powered by <a href="http://jsonplaceholder.typicode.com/" target="_blank">json placeholder</a></h2>
+{+content/}
+</body>

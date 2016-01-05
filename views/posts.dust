@@ -1,0 +1,24 @@
+{>"layout"/}
+{<content}
+    {?userId}
+        <p>Enjoy reading junk posts filtered by userId {userId}</p>
+    {:else}
+        <p>Enjoy reading junk posts</p>
+        <form method="GET" action="/posts/filter">
+            <label for="userid">filter posts by userId</label>&nbsp;&nbsp;
+            <input type="number" min="0" id="userid" name="userid" placeholder="Filter by userId" required>&nbsp;
+            <input type="submit" value="filter">
+        </form>
+    {/userId}
+
+    <div>
+        <ul>
+            {#posts}
+                <li>
+                    <p>User Id: {userId}</p>
+                    <p>Post Message:<br/>{body}</p>
+                </li>
+            {/posts}
+        </ul>
+    </div>
+{/content}
